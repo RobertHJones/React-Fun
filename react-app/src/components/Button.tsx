@@ -1,7 +1,7 @@
 interface Props {
   type: string;
   text: string;
-  onChange: (item: string) => void;
+  onChange: () => void;
 }
 
 const Button = ({ type, text, onChange }: Props) => {
