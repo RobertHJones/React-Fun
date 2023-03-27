@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [buttonType, setButtonType] = useState("btn btn-primary");
+  const [alerted, setAlerted] = useState(false);
 
   let array = [
     "btn btn-primary",
@@ -23,7 +24,9 @@ function App() {
     let floor = Math.floor(random);
     setButtonType(array[floor]);
     console.log(buttonType, floor);
+    setAlerted(true);
   }
+
   // let items = [
   //   "Wellingborough",
   //   "Birmingham",
@@ -38,9 +41,11 @@ function App() {
 
   return (
     <div>
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
+      {alerted === true && (
+        <Alert onChange={() => setAlerted(false)}>
+          Hello <span>World</span>
+        </Alert>
+      )}
       <Button
         onChange={handleChange}
         type={buttonType}
