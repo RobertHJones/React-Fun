@@ -1,7 +1,7 @@
-// import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useState } from "react";
+import ListGroup from "./components/ListGroup";
 
 function App() {
   const [buttonType, setButtonType] = useState("btn btn-primary");
@@ -27,21 +27,26 @@ function App() {
     setAlerted(true);
   }
 
-  // let items = [
-  //   "Wellingborough",
-  //   "Birmingham",
-  //   "Wigston",
-  //   "Ellesmere Port",
-  //   "Leamington",
-  // ];
+  let items = [
+    "Wellingborough",
+    "Birmingham",
+    "Wigston",
+    "Ellesmere Port",
+    "Leamington",
+  ];
 
-  // const handleSelectItem = (item: string) => {
-  //   console.log(item);
-  // };
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
 
   return (
     <div>
-      {alerted === true && (
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={handleSelectItem}
+      />
+      {/* {alerted === true && (
         <Alert onChange={() => setAlerted(false)}>
           Hello <span>World</span>
         </Alert>
@@ -50,7 +55,7 @@ function App() {
         onChange={handleChange}
         type={buttonType}
         text={buttonType.slice(8)}
-      />
+      /> */}
     </div>
   );
 }
