@@ -1,7 +1,8 @@
 import Alert from "./components/Alert";
-import Button from "./components/Button";
+import Button from "./components/Button/Button";
 import { useState } from "react";
 import ListGroup from "./components/ListGroup";
+import Like from "./components/Like";
 
 function App() {
   const [buttonType, setButtonType] = useState("btn btn-primary");
@@ -41,12 +42,17 @@ function App() {
 
   return (
     <div>
-      <ListGroup
+      <Like
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      />
+      {/* <ListGroup
         items={items}
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
-      {/* {alerted === true && (
+      {alerted === true && (
         <Alert onChange={() => setAlerted(false)}>
           Hello <span>World</span>
         </Alert>

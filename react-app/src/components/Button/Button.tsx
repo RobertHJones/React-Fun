@@ -1,3 +1,5 @@
+import styles from "./Button.module.css";
+
 interface Props {
   type: string;
   text: string;
@@ -6,7 +8,7 @@ interface Props {
 
 const Button = ({ type, text, onChange }: Props) => {
   return (
-    <div onClick={onChange} className={type}>
+    <div onClick={onChange} className={styles.button}>
       {text}
     </div>
   );
