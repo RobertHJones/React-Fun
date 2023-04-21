@@ -6,6 +6,7 @@ import Like from "./components/Like";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import ExpandableText from "./components/ExpandableText";
+import Form from "./components/Form";
 
 function App() {
   const [buttonType, setButtonType] = useState("btn btn-primary");
@@ -64,7 +65,8 @@ function App() {
     <div>
       {/* <Navbar cartItemsCount={cartItems.length} />
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
-      <ExpandableText maxChars={100} />
+      {/* <ExpandableText maxChars={100} /> */}
+      <Form />
       {/* <Like
         onClick={() => {
           console.log("Clicked");
