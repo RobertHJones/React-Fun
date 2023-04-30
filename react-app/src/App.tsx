@@ -7,8 +7,17 @@ import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import ExpandableText from "./components/ExpandableText";
 import Form from "./components/Form";
+import ExpenseList from "./expense-tracker/components/ExpenseList";
 
 function App() {
+const [expenses, setExpenses] = useState([
+  {id: 1, description: 'aaa', amount: 10, category: 'Utilities'},
+  {id: 2, description: 'bbb', amount: 10, category: 'Utilities'},
+  {id: 3, description: 'ccc', amount: 10, category: 'Utilities'},
+  {id: 4, description: 'ddd', amount: 10, category: 'Utilities'}
+])
+ 
+
   const [buttonType, setButtonType] = useState("btn btn-primary");
   const [alerted, setAlerted] = useState(false);
   const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
@@ -66,7 +75,8 @@ function App() {
       {/* <Navbar cartItemsCount={cartItems.length} />
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
       {/* <ExpandableText maxChars={100} /> */}
-      <Form />
+      {/* <Form /> */}
+      <ExpenseList expenses={expenses} onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}/>
       {/* <Like
         onClick={() => {
           console.log("Clicked");
